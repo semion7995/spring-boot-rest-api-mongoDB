@@ -1,0 +1,30 @@
+
+
+POST author
+{
+  "firstName": "John",
+  "lastName" : "Doe"
+}
+
+POST book
+{
+  "name": "John",
+  "isbn": "111",
+  "authorId": "61bb9aa09553871d8974294f"
+}
+
+POST member
+{
+  "firstName": "John",
+  "lastName" : "Doe"
+}
+
+POST land
+{
+  "bookIds": 
+  ["111"]
+  ,
+  "memberId" : "61bb9cda9553871d89742952"
+}
+
+
