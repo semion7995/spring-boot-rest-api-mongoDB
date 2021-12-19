@@ -3,6 +3,7 @@ package com.javatodev.api.controller;
 import com.javatodev.api.model.Author;
 import com.javatodev.api.model.Book;
 import com.javatodev.api.model.Member;
+import com.javatodev.api.model.look_book_member.MemberBook;
 import com.javatodev.api.model.request.AuthorCreationRequest;
 import com.javatodev.api.model.request.BookCreationRequest;
 import com.javatodev.api.model.request.BookLendRequest;
@@ -34,6 +35,11 @@ public class LibraryController {
     @GetMapping(path = "/book/{bookId}")
     public ResponseEntity<Book> readBook (@PathVariable String bookId) {
         return ResponseEntity.ok(libraryService.readBookById(bookId));
+    }
+
+    @GetMapping(path = "/look/{memberId}")
+    public ResponseEntity<MemberBook> readAllBookMember(@PathVariable String memberId){
+        return ResponseEntity.ok(libraryService.lookBooksHand(memberId));
     }
 
     @GetMapping(path = "/author")
@@ -85,5 +91,6 @@ public class LibraryController {
     public ResponseEntity<Author> createAuthor (@RequestBody AuthorCreationRequest request) {
         return ResponseEntity.ok(libraryService.createAuthor(request));
     }
+
 
 }
